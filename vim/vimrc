@@ -1,0 +1,9 @@
+set tabstop=2
+"set invlist"
+set number
+set ruler
+syntax enable
+:filetype on
+set backspace=indent,eol,start
+map <Leader>t :FuzzyFinderTextMate<Enter>
+filetype plugin on

@@ -1,0 +1,19 @@
+Host dev.entermediasoftware.com
+  User donl
+  Hostname dev.entermediasoftware.com
+  IdentityFile ~/.ssh/id-openedit1
+
+Host vd
+  User entermedia 
+  Hostname ams.visualdatainc.com
+
+Host usd
+  User administrator
+  Hostname 137.216.132.156
+
+Host eta
+  User entermedia
+  Hostname 74.115.45.48
+Host *
+     ControlMaster auto
+     ControlPath /tmp/ssh-%r@%h:%p

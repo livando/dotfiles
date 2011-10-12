@@ -1,0 +1,4 @@
+export EDITOR='/usr/bin/vim'
+GRADLE_HOME=/Users/donl/opt/gradle-1.0-milestone-3
+PATH=$PATH:/Users/donl/opt/gradle-1.0-milestone-3/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

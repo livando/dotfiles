@@ -1,0 +1,9 @@
+function take {
+  mkdir $1
+  cd $1
+}
+function tell {
+  cd $1
+  ls -l
+}
+PS1="\n\u: \w \n➥ "
