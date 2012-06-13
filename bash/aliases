@@ -8,12 +8,26 @@ alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gl='git pull --rebase'
 alias gk='gitk --all&'
 alias gx='gitx --all'
+alias gpb='git publish-branch'
 
 #[RoR]
 alias ror='cd ~/dev/_rails'
 alias cof='cd ~/dev/_coffee'
+alias sr='script/rails'
+alias sc='script/rails console'
+alias ss='script/rails server'
+alias rs='rspec'
+alias cu='cucumber -r features'
+alias cuw='cucumber --profile wip'
+alias migrate='rake db:migrate'
+alias ropen='open http://localhost:3000'
+
+#[Heroku]
+alias hp='git push heroku master'
+alias hopen='heroku open'
 
 alias got='git '
 alias get='git '
@@ -21,3 +35,14 @@ alias get='git '
 alias l='ls -l'
 alias who8080='lsof -i :8080'
 
+#[Cheats]
+alias vcs='cat -b ~/Documents/cheatsheets/vim.txt'
+alias ccs='cat -b ~/Documents/cheatsheets/cucumber.txt'
+alias hcs='cat -b ~/Documents/cheatsheets/heroku.txt'
+alias ocs='cat -b ~/Documents/cheatsheets/octopress.txt'
+
+#[JavaScript]
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
+
+#[Current Projects]
+alias tpr='cd ~/dev/_rails/_paint_report/spike_2'

@@ -1,9 +1,17 @@
-set tabstop=2
-"set invlist"
 set number
 set ruler
-syntax enable
-:filetype on
 set backspace=indent,eol,start
 map <Leader>t :FuzzyFinderTextMate<Enter>
-filetype plugin on
+:map <special> <F2> :ruby finder.rescan!<ENTER>
+map <C-J> <C-W>j<15C-W>_
+map <C-K> <C-W>k<15C-W>
+map <C-H> <C-W>h<15C-W>_
+map <C-L> <C-W>l<15C-W>
+set autoindent
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+set tabstop=2 shiftwidth=2 expandtab
+nnoremap <leader><leader> <c-^>

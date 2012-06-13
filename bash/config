@@ -6,4 +6,8 @@ function tell {
   cd $1
   ls -l
 }
+function rdm {
+  rake db:migrate
+  rake db:test:prepare
+}
 PS1="\n\u: \w \n➥ "
