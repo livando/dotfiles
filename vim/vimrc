@@ -122,3 +122,6 @@ function! PromoteToLet()
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
+set t_Co=256
+colorscheme grb4
+autocmd BufNewFile,BufRead *.scss set ft=scss.css
