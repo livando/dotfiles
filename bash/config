@@ -6,8 +6,21 @@ function tell {
   cd $1
   ls -l
 }
-function rdm {
+function rvm_install {
+  rvm install $1 --with-gcc=clang
+}
+function migrate {
   rake db:migrate
   rake db:test:prepare
 }
-PS1="\n\u: \w \n➥ "
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+}
+function proml {
+
+  local        BLUE="\[\033[0;34m\]"
+  local     DEFAULT="\[\033[0m\]"
+
+PS1="\n\u: \w $BLUE\$(parse_git_branch) $DEFAULT \n➥ "
+}
+proml

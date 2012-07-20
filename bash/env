@@ -1,5 +1,6 @@
-export EDITOR='/usr/bin/vim'
+export EDITOR='~/bin/mvim'
+#export EDITOR='/usr/bin/vim'
 GRADLE_HOME=/Users/donl/opt/gradle-1.0-milestone-3
 HBRAKE_HOME=/users/donl/opt/hand_brake
-PATH=$PATH:/Users/donl/opt/gradle-1.0-milestone-3/bin:$HBRAKE_HOME:~/bin
+PATH=/usr/local/bin/vim:/usr/local/bin:$PATH:/Users/donl/opt/gradle-1.0-milestone-3/bin:$HBRAKE_HOME:~/bin
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

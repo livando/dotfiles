@@ -1,5 +1,10 @@
 alias c=clear
 alias h=history
+alias l='ls -l'
+alias who8080='lsof -i :8080'
+
+#[GIT]
+alias git=/usr/local/git/bin/git
 alias g='cat ~/.gitconfig'
 alias gp='cat ~/bin/dotfiles/bash/aliases'
 alias gs='git status '
@@ -12,6 +17,8 @@ alias gl='git pull --rebase'
 alias gk='gitk --all&'
 alias gx='gitx --all'
 alias gpb='git publish-branch'
+alias got='git '
+alias get='git '
 
 #[RoR]
 alias ror='cd ~/dev/_rails'
@@ -22,18 +29,11 @@ alias ss='script/rails server'
 alias rs='rspec'
 alias cu='cucumber -r features'
 alias cuw='cucumber --profile wip'
-alias migrate='rake db:migrate'
 alias ropen='open http://localhost:3000'
 
 #[Heroku]
 alias hp='git push heroku master'
 alias hopen='heroku open'
-
-alias got='git '
-alias get='git '
-
-alias l='ls -l'
-alias who8080='lsof -i :8080'
 
 #[Cheats]
 alias vcs='cat -b ~/Documents/cheatsheets/vim.txt'
@@ -44,5 +44,10 @@ alias ocs='cat -b ~/Documents/cheatsheets/octopress.txt'
 #[JavaScript]
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
-#[Current Projects]
-alias tpr='cd ~/dev/_rails/_paint_report/spike_2'
+#[VIM]
+alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias v=/Applications/MacVim.app/Contents/MacOS/Vim
+
+#[MYSQL]
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
