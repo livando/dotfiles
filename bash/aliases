@@ -20,13 +20,20 @@ alias gpb='git publish-branch'
 alias got='git '
 alias get='git '
 
+#[GIT THOUGHTBOT]
+alias gup='git fetch origin && git rebase origin/master'
+
+#[TMUX]
+alias t=tmux
+alias ta='tmux attach -t'
+
 #[RoR]
 alias ror='cd ~/dev/_rails'
 alias cof='cd ~/dev/_coffee'
 alias sr='script/rails'
 alias sc='script/rails console'
 alias ss='script/rails server'
-alias rs='rspec'
+alias rs='rspec spec'
 alias cu='cucumber -r features'
 alias cuw='cucumber --profile wip'
 alias ropen='open http://localhost:3000'

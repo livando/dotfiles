@@ -1,6 +1,21 @@
+function nios {
+  mkdir -p assets/images assets/images@2x assets/nibs
+  mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
+}
 function take {
   mkdir $1
   cd $1
+}
+function tm {
+  tmux new -s $1
+}
+function push {
+  git push
+  git push heroku
+}
+function prec {
+  RAILS_ENV=production 
+  bundle exec rake assets:precompile
 }
 function tell {
   cd $1
