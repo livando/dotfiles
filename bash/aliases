@@ -2,6 +2,7 @@ alias c=clear
 alias h=history
 alias l='ls -l'
 alias who8080='lsof -i :8080'
+alias whor='lsof -i :3000'
 
 #[GIT]
 alias git=/usr/local/git/bin/git

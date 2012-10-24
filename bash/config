@@ -2,6 +2,9 @@ function nios {
   mkdir -p assets/images assets/images@2x assets/nibs
   mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
 }
+function count {
+  ls | wc -l
+}
 function take {
   mkdir $1
   cd $1
