@@ -54,7 +54,7 @@ alias ocs='cat -b ~/Documents/cheatsheets/octopress.txt'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
 #[VIM]
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+#alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 alias v=/Applications/MacVim.app/Contents/MacOS/Vim
 
 #[MYSQL]
