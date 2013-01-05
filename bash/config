@@ -3,11 +3,9 @@ function nios {
   mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
 }
 function np {
-  cd /Dropbox/projects
+  p
   take $1
-  mkdir assets
-  mkdir working_files
-  mkdir to_client
+  mkdir assets working_files to_client
 }
 function count {
   ls | wc -l
