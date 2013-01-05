@@ -1,3 +1,4 @@
+alias p='cd /Dropbox/projects'
 alias c=clear
 alias h=history
 alias l='ls -l'
