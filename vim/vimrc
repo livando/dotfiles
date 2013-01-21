@@ -27,6 +27,7 @@ map <C-K> <C-W>k<15C-W>
 map <C-H> <C-W>h<15C-W>_
 map <C-L> <C-W>l<15C-W>
 let mapleader = ","
+map <leader>z zf%
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
@@ -67,6 +68,7 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>m :set invnumber<cr>
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -128,9 +130,9 @@ function! RunTests(filename)
     if filereadable("script/test")
       exec ":!script/test " . a:filename
     elseif filereadable("Gemfile")
-      exec ":!bundle exec rspec --color " . a:filename
+      exec ":!bundle exec rspec -fd --color " . a:filename
     else
-      exec ":!rspec --color " . a:filename
+      exec ":!rspec -fd --color " . a:filename
     end
   end
 endfunction

@@ -1,11 +1,12 @@
-alias p='cd /_Projects/Dropbox'
+alias p='cd /_Projects/Dropbox/Projects'
+alias d='cd ~/Dropbox/dev'
 alias c=clear
 alias h=history
 alias l='ls -l'
 alias who8080='lsof -i :8080'
 alias whor='lsof -i :3000'
 
-#[GIT]
+#[GIT-start]
 alias git=/usr/local/git/bin/git
 alias g='cat ~/.gitconfig'
 alias gp='cat ~/bin/dotfiles/bash/aliases'
@@ -21,6 +22,7 @@ alias gx='gitx --all'
 alias gpb='git publish-branch'
 alias got='git '
 alias get='git '
+#[GIT-end]
 
 #[GIT THOUGHTBOT]
 alias gup='git fetch origin && git rebase origin/master'
@@ -43,6 +45,8 @@ alias jopen='open http://localhost:3000/jasmine'
 
 #[Heroku]
 alias hp='git push heroku master'
+alias hps='git push staging staging:master' #git push remote local_branch:remote_branch
+alias hpp='git push production master:master'
 alias hopen='heroku open'
 
 #[Cheats]

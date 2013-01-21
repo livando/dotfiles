@@ -1,3 +1,26 @@
+function hg {
+  history | grep --color=auto $1
+}
+function gfind {
+  awk "/#\[$1-start\]/,/#\[$1-end\]/ { print }" ~/bin/dotfiles/bash/aliases
+}
+function hnp {
+  rails new $1 -d postgresql -T
+  cd $1
+  git init .
+  ga .
+  gc -m 'Initial Commit'
+  heroku create --remote staging
+  git push staging master
+  heroku run rake db:migrate --remote staging
+  heroku rename "s-$1"
+  heroku open
+  heroku create --remote production
+  go -b staging
+  git remote -v
+  #cp config/environments/production.rb config/environments/staging.rb
+  #heroku config:add RACK_ENV=staging RAILS_ENV=staging --remote staging
+}
 function nios {
   mkdir -p assets/images assets/images@2x assets/nibs
   mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
