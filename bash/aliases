@@ -1,10 +1,21 @@
-alias p='cd /_Projects/Dropbox/Projects'
-alias d='cd ~/Dropbox/dev'
 alias c=clear
 alias h=history
 alias l='ls -l'
 alias who8080='lsof -i :8080'
 alias whor='lsof -i :3000'
+alias tt='cd ~/Dropbox/tech_training_2'
+alias rc='vim ~/.bashrc'
+alias src='source ~/.bashrc'
+
+#ANGULAR
+alias ng='cd ~/dev/_angular'
+
+#PROJECTS
+alias st='cd ~/dev/_red_iron_crow/www.steeltrap.com/st4'
+alias org='cd ~/dev/_illuminati/projects/0070_ORG/working_files/org'
+alias ccm='cd ~/dev/_illuminati/projects/0048_CCM/working_files/site/CCM-Web'
+alias rar='cd ~/dev/_illuminati/projects/0065_ORG/working_files/org'
+alias enroll='cd ~/clients/sparkbox/DPLER-Enroll'
 
 #[GIT-start]
 alias git=/usr/local/git/bin/git
@@ -22,6 +33,7 @@ alias gx='gitx --all'
 alias gpb='git publish-branch'
 alias got='git '
 alias get='git '
+alias gcp='git cherry-pick'
 #[GIT-end]
 
 #[GIT THOUGHTBOT]
@@ -31,22 +43,29 @@ alias gup='git fetch origin && git rebase origin/master'
 alias t=tmux
 alias ta='tmux attach -t'
 
+#[METEOR]
+alias m=meteor
+
 #[RoR]
 alias ror='cd ~/dev/_rails'
 alias cof='cd ~/dev/_coffee'
 alias sr='script/rails'
-alias sc='script/rails console'
-alias ss='script/rails server'
+alias r='rails'
+alias sc='rails console'
+alias ss='rails server'
 alias rs='rspec spec'
 alias cu='cucumber -r features'
 alias cuw='cucumber --profile wip'
 alias ropen='open http://localhost:3000'
+alias ropen1='open http://localhost:3100'
 alias jopen='open http://localhost:3000/jasmine'
+alias emigrate='RAILS_ENV=test bundle exec rake db:migrate'
 
 #[Heroku]
 alias hp='git push heroku master'
 alias hps='git push staging staging:master' #git push remote local_branch:remote_branch
 alias hpp='git push production master:master'
+alias hc='heroku create --stack cedar'
 alias hopen='heroku open'
 
 #[Cheats]

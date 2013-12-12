@@ -1,3 +1,40 @@
+function vox {
+  cd /Users/livando/Dropbox/DropVox
+  l
+}
+function mark {
+  open -a Marked.app $1
+}
+function vmark {
+  open -a Marked.app $1
+  vim $1
+}
+function ppls {
+  open -a Marked.app ~/clients/sparkbox/ppls/ppls_notes.md
+  vim ~/clients/sparkbox/ppls/ppls_notes.md
+}
+function dcs {
+  open -a Marked.app ~/clients/sparkbox/ppls/dcs_notes.md
+  vim ~/clients/sparkbox/ppls/dcs_notes.md
+}
+function stf {
+  open -a Marked.app ~/dev/_red_iron_crow/www.steeltrap.com/brainstorming/feature.md
+  vim ~/dev/_red_iron_crow/www.steeltrap.com/brainstorming/feature.md
+}
+function nip {
+  mkdir $1
+  cd $1
+  mkdir assets to_client working_files
+  cd working_files
+  mkdir ios site
+}
+function redis {
+  open http://localhost:8081
+  redis-commander
+}
+function rn {
+  rails new $1 -b ~/bin/dotfiles/config/app_builder.rb
+}
 function hg {
   history | grep --color=auto $1
 }
@@ -26,7 +63,7 @@ function nios {
   mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
 }
 function np {
-  p
+  cd ~/dev/_illuminati/projects
   take $1
   mkdir assets working_files to_client
 }
@@ -62,11 +99,22 @@ function migrate {
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
+parse_git_tag () {
+  git describe --tags 2> /dev/null
+}
+parse_git_branch_or_tag() {
+  local OUT="$(parse_git_branch)"
+  if [ "$OUT" == " ((no branch))" ]; then
+    OUT="($(parse_git_tag))";
+  fi
+  echo $OUT
+}
 function proml {
 
   local        BLUE="\[\033[0;34m\]"
   local     DEFAULT="\[\033[0m\]"
 
-PS1="\n\u: \w $BLUE\$(parse_git_branch) $DEFAULT \n➥ "
+#PS1="\n\u: \w $BLUE\$(parse_git_branch) $DEFAULT \n➥ "
+PS1="\n\u: \w $BLUE\$(parse_git_branch_or_tag) $DEFAULT \n➥ "
 }
 proml

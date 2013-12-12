@@ -13,6 +13,8 @@ set numberwidth=5
 set cursorline
 syntax on
 filetype plugin indent on
+set clipboard=unnamed
+:noremap <f5> :!ctags -R<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -55,6 +57,7 @@ map <leader>gR :call ShowRoutes()<cr>
 " ASSETS
 map <leader>gaj :CommandTFlush<cr>\|:CommandT app/assets/javascripts<cr>
 map <leader>gas :CommandTFlush<cr>\|:CommandT app/assets/stylesheets<cr>
+" RAILS MVC
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
@@ -62,12 +65,25 @@ map <leader>gs :CommandTFlush<cr>\|:CommandT app/services<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+" RAILS CUCUMBER
+map <leader>s :CommandTFlush<cr>\|:CommandT spec<cr>
+map <leader>sc :CommandTFlush<cr>\|:CommandT spec/controllers<cr>
+map <leader>sm :CommandTFlush<cr>\|:CommandT spec/models<cr>
+map <leader>sf :CommandTFlush<cr>\|:CommandT spec/features<cr>
+" RAILS CUCUMBER
 map <leader>gf :CommandTFlush<cr>\|:CommandT features<cr>
+map <leader>gfs :CommandTFlush<cr>\|:CommandT features/step_definitions<cr>
 map <leader>gff :CommandTFlush<cr>\|:CommandT spec/factories<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+map <leader>ec :CommandTFlush<cr>\|:CommandT app/assets/javascripts/collections<cr>
+map <leader>eh :CommandTFlush<cr>\|:CommandT app/assets/javascripts/helpers<cr>
+map <leader>em :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
+map <leader>er :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
+map <leader>et :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
+map <leader>ev :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
 map <leader>m :set invnumber<cr>
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -164,3 +180,10 @@ endfunction
 set t_Co=256
 colorscheme grb4
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
+let g:used_javascript_libs = 'angularjs'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" DATE/TIME
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
