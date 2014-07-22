@@ -78,7 +78,7 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
-map <leader>ec :CommandTFlush<cr>\|:CommandT app/assets/javascripts/collections<cr>
+map <leader>ec :CommandTFlush<cr>\|:CommandT app/assets/javascripts/controllers<cr>
 map <leader>eh :CommandTFlush<cr>\|:CommandT app/assets/javascripts/helpers<cr>
 map <leader>em :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 map <leader>er :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
@@ -102,6 +102,7 @@ map <silent> <C-N> :silent noh<CR>
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
+map <leader>A :call RunAllTests('')<cr>
 map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 function! RunTestFile(...)
@@ -146,11 +147,23 @@ function! RunTests(filename)
     if filereadable("script/test")
       exec ":!script/test " . a:filename
     elseif filereadable("Gemfile")
-      exec ":!bundle exec rspec -fd --color " . a:filename
+      exec ":!bundle exec rspec -t ~type:feature -fd --color " . a:filename
     else
-      exec ":!rspec -fd --color " . a:filename
+      exec ":!rspec -fd --color ~type:feature " . a:filename
     end
   end
+endfunction
+
+function! RunAllTests(filename)
+  " Write the file and run tests for the given filename
+  :w
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+  exec ":!bundle exec rspec -fd --color " . a:filename
 endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE

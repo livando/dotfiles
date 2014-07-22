@@ -1,17 +1,35 @@
+function kata {
+  cd ~/dev/_ember/_getting_started/_blog_video/kata/my_kata
+  rm -rf *
+  cp -R ../../starter_files/* .
+}
 function vox {
   cd /Users/livando/Dropbox/DropVox
-  l
+  ls
 }
+
 function mark {
   open -a Marked.app $1
 }
-function vmark {
-  open -a Marked.app $1
-  vim $1
+function spark {
+  open -a Marked.app ~/Dropbox/notes/02-13-14-spark\ file.md
+  vim ~/Dropbox/notes/02-13-14-spark\ file.md
 }
 function ppls {
   open -a Marked.app ~/clients/sparkbox/ppls/ppls_notes.md
   vim ~/clients/sparkbox/ppls/ppls_notes.md
+}
+function egs {
+  open -a Google\ Chrome.app http://emberjs.com/guides/getting-started/
+  open -a Google\ Chrome.app ~/dev/_ember/getting_started/index.html
+  open -a Marked.app ~/dev/_ember/getting_started/ember.md
+  cd ~/dev/_ember/getting_started
+  vim ~/dev/_ember/getting_started
+}
+function ember {
+  cd ~/dev/_ember
+  open -a Marked.app ~/dev/_ember/getting_started/ember.md
+  vim ~/dev/_ember/getting_started/ember.md
 }
 function dcs {
   open -a Marked.app ~/clients/sparkbox/ppls/dcs_notes.md
