@@ -26,11 +26,6 @@ function egs {
   cd ~/dev/_ember/getting_started
   vim ~/dev/_ember/getting_started
 }
-function ember {
-  cd ~/dev/_ember
-  open -a Marked.app ~/dev/_ember/getting_started/ember.md
-  vim ~/dev/_ember/getting_started/ember.md
-}
 function dcs {
   open -a Marked.app ~/clients/sparkbox/ppls/dcs_notes.md
   vim ~/clients/sparkbox/ppls/dcs_notes.md
@@ -134,5 +129,6 @@ function proml {
 
 #PS1="\n\u: \w $BLUE\$(parse_git_branch) $DEFAULT \n➥ "
 PS1="\n\u: \w $BLUE\$(parse_git_branch_or_tag) $DEFAULT \n➥ "
+#PS1="\e[0;31m[\u@\h \W]\$ \n\u: \w $BLUE\$(parse_git_branch_or_tag) $DEFAULT \n➥ "
 }
 proml
