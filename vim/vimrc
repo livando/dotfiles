@@ -34,6 +34,7 @@ map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+:noremap <Enter> :set hlsearch! hlsearch?<CR>
 nnoremap <leader><leader> <c-^>
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 set hlsearch
@@ -84,6 +85,14 @@ map <leader>em :CommandTFlush<cr>\|:CommandT app/assets/javascripts/models<cr>
 map <leader>er :CommandTFlush<cr>\|:CommandT app/assets/javascripts/routes<cr>
 map <leader>et :CommandTFlush<cr>\|:CommandT app/assets/javascripts/templates<cr>
 map <leader>ev :CommandTFlush<cr>\|:CommandT app/assets/javascripts/views<cr>
+" PHOENIX FRAMEWORK
+" " map <leader>pw :CommandTFlush<cr>\|:CommandT web<cr>
+" map <leader>pc :CommandTFlush<cr>\|:CommandT web/controllers<cr>
+" map <leader>pm :CommandTFlush<cr>\|:CommandT web/models<cr>
+" map <leader>pr :CommandTFlush<cr>\|:CommandT web/router.ex<cr>
+" map <leader>pt :CommandTFlush<cr>\|:CommandT web/templates<cr>
+" map <leader>pv :CommandTFlush<cr>\|:CommandT web/views<cr>
+
 map <leader>m :set invnumber<cr>
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
@@ -178,6 +187,7 @@ function! RenameFile()
   endif
 endfunction
 map <leader>n :call RenameFile()<cr>
+map <leader>. :on<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -200,3 +210,41 @@ let g:used_javascript_libs = 'angularjs'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :nnoremap <F5> "=strftime("%c")<CR>P
 :inoremap <F5> <C-R>=strftime("%c")<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIMUX
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""ear;
+" Run the current file with rspec
+map <Leader>rb :call VimuxRunCommand("clear; bundle exec rspec " . bufname("%"))<CR>
+" Prompt for a command to run
+map <Leader>rp :VimuxPromptCommand<CR>
+" Run last command executed by vimuxruncommand
+map <Leader>rl :VimuxRunLastCommand<CR>
+" inspect runner pane
+map <Leader>ri :VimuxInspectRunner<CR>
+" close vim tmux runner opened by vimuxruncommand
+map <Leader>rq :VimuxCloseRunner<CR>
+" interrupt any command running in the runner pane
+map <Leader>rs :VimuxInterruptRunner<CR>
+" give tmux pane 35% screen real estate
+let g:VimuxHeight = "35"
+" split tmux pane horizontally (better on widescreen)
+let g:VimuxOrientation = "h"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VIM Fold Persistance
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""ear;
+autocmd BufWinLeave .* mkview
+autocmd BufWinEnter .* silent loadview 
+
+:map <leader>E :MarkdownEditCodeBlock<cr>
+autocmd BufRead,BufNewFile *.es6 setfiletype javascript
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+set pastetoggle=<F2>

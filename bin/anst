@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+FileUtils.cd '/Users/livando/Dropbox/red_iron_crow/_clients/oris_intel/metal'
+#if ARGV.size == 0
+#  exec("ansible timber-servers -m shell -a 'sudo supervisorctl status'")
+#end
+#ARGV[1] = 'all' if ARGV.size == 1
+#exec("ansible timber-servers -m shell -a 'sudo supervisorctl #{ARGV.join(' ')}'") 
+if ARGV.length == 0  
+  puts "Usage: ans [su] target-hosts cmd1 [cmdn]*" 
+  puts "Example: ans su marketplace-servers start all"
+elsif  ARGV[0].eql?("su")
+  cmds = ARGV[2..-1].join(' ')
+  exec("ansible #{ARGV[1]} -m shell -a 'sudo supervisorctl #{cmds}'")
+elsif ARGV.length == 2
+  exec("ansible #{ARGV[0]} -m shell -a '#{ARGV[1]}'")
+end

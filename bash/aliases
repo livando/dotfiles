@@ -7,11 +7,15 @@ alias tt='cd ~/Dropbox/tech_training_2'
 alias rc='vim ~/.bashrc'
 alias src='source ~/.bashrc'
 
+alias pr='ps aux | grep ruby'
+#CHEATS
+alias cheat='cd /Users/livando/Dropbox/cheatsheets'
 #GOALS
 alias rg='cd /Users/livando/Dropbox/guides/rails'
 #POMIET
-alias rs='rspec -t ~type:feature'
+#alias rsf='rspec -t ~type:feature'
 alias pom='cd /Users/livando/Dropbox/red_iron_crow/_clients/pomiet'
+alias ll='cd /Users/livando/Dropbox/red_iron_crow/_clients/_littlelines'
 #30X500
 alias sa='cd ~/Dropbox/Red\ Iron\ Crow/sales_safari'
 alias blog='cd ~/Dropbox/Red\ Iron\ Crow/005_blog_octopress/octopress'
@@ -25,6 +29,10 @@ alias org='cd ~/dev/_illuminati/projects/0070_ORG/working_files/org'
 alias ccm='cd ~/dev/_illuminati/projects/0048_CCM/working_files/site/CCM-Web'
 alias rar='cd ~/dev/_illuminati/projects/0065_ORG/working_files/org'
 alias enroll='cd ~/clients/sparkbox/DPLER-Enroll'
+
+#[ansible-start]
+alias amu="ansible-playbook -i Dropbox/red_iron_crow/_clients/oris_intel/metal/inventory Dropbox/red_iron_crow/_clients/oris_intel/metal/update.yml -l marketplace-servers"
+alias atu="ansible-playbook -i Dropbox/red_iron_crow/_clients/oris_intel/metal/inventory Dropbox/red_iron_crow/_clients/oris_intel/metal/update.yml -l timber-servers"
 
 #[GIT-start]
 alias g='cat ~/clients/sparkbox/mynotes/git.md'
@@ -44,10 +52,14 @@ alias got='git '
 alias get='git '
 alias gcp='git cherry-pick'
 alias gum='git fetch upstream && git merge upstream/master'
+alias gfo='git fetch origin'
 #[GIT-end]
 
 #[GIT THOUGHTBOT]
 alias gup='git fetch origin && git rebase origin/master'
+
+#[GO]
+alias ggo=/usr/local/go/bin/go
 
 #[TMUX]
 alias t=tmux
@@ -67,13 +79,14 @@ alias sr='rails'
 alias r='rails'
 alias sc='rails console'
 alias ss='rails server'
-#alias rs='rspec spec'
+alias rs='rspec spec'
 alias cu='cucumber -r features'
 alias cuw='cucumber --profile wip'
 alias ropen='open http://localhost:3000'
 alias ropen1='open http://localhost:3100'
 alias jopen='open http://localhost:3000/jasmine'
 alias emigrate='RAILS_ENV=test bundle exec rake db:migrate'
+alias dbg="grep 'DBG' **/*.rb"
 
 #[Heroku]
 alias hp='git push heroku master'

@@ -1,3 +1,19 @@
+function am {
+  ansible marketplace-servers -m shell -a 'sudo supervisorctl $1 $2'
+}
+function at {
+  ansible timber-servers -m shell -a 'sudo supervisorctl $1 $2'
+}
+
+function hosts {
+  head -n 16 ~/.ssh/cheat_sheet.txt
+}
+function bs {
+  cd `bundle show $1`
+}
+function title {
+  echo -ne "\033]0;"$*"\007"
+}
 function kata {
   cd ~/dev/_ember/_getting_started/_blog_video/kata/my_kata
   rm -rf *
@@ -54,6 +70,23 @@ function hg {
 function gfind {
   awk "/#\[$1-start\]/,/#\[$1-end\]/ { print }" ~/bin/dotfiles/bash/aliases
 }
+function hcreate {
+  heroku create
+  git push heroku master
+  heroku run rake db:migrate
+  heroku apps:rename $1
+  heroku open
+}
+function hsetup {
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/Procfile .
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.env .
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.ruby-version .
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.gitignore .
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/Gemfile .
+  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/database.yml config/
+  bundle install
+}
+
 function hnp {
   rails new $1 -d postgresql -T
   cd $1

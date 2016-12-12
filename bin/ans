@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+FileUtils.cd '/Users/livando/Dropbox/red_iron_crow/_clients/oris_intel/metal'
+if ARGV.size == 0
+  exec("ansible marketplace-servers -m shell -a 'sudo supervisorctl status'")
+end
+ARGV[1] = 'all' if ARGV.size == 1
+exec("ansible marketplace-servers -m shell -a 'sudo supervisorctl #{ARGV.join(' ')}'") 
