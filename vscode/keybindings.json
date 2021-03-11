@@ -1,0 +1,106 @@
+// Place your key bindings in this file to override the defaults
+[
+    /**
+    * Panels
+    **/
+    {
+        "key": "cmd+k cmd+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "cmd+k cmd+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "cmd+k cmd+d",
+        "command": "workbench.view.debug"
+    },
+    {
+        "key": "cmd+k cmd+x",
+        "command": "workbench.extensions.action.showInstalledExtensions"
+    },
+    {
+        "key": "cmd+k cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+e",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    /**
+    * Split Panels
+    **/
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.joinAllGroups",
+        "when": "editorFocus"
+    },
+    /**
+    * Terminal
+    **/
+    {
+        "key": "ctrl+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+cmd+t",
+        "command": "workbench.action.toggleMaximizedPanel",
+        // "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+cmd+k",
+        "command": "workbench.action.terminal.resizePaneUp"
+    },
+    {
+        "key": "ctrl+cmd+j",
+        "command": "workbench.action.terminal.resizePaneDown"
+    },
+    {
+        "key": "ctrl+r s",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    /**
+    * Navigation
+    **/
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "cmd+; h",
+        "command": "workbench.action.splitEditorOrthogonal"
+    },
+    /**
+    * Toggle Font Size
+    **/
+    {
+        "key": "cmd+k cmd+k",
+        "command": "toggle",
+        "when": "editorTextFocus",
+        "args": {
+            "id": "fontSize",
+            "value": [
+                {
+                    "editor.fontSize": 15,
+                    "editor.lineHeight": 45
+                },
+                {
+                    "editor.fontSize": 12,
+                    "editor.lineHeight": 0
+                }
+            ]
+        }
+    },
+]
