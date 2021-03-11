@@ -1,90 +1,62 @@
-function am {
-  ansible marketplace-servers -m shell -a 'sudo supervisorctl $1 $2'
-}
-function at {
-  ansible timber-servers -m shell -a 'sudo supervisorctl $1 $2'
-}
-
-function hosts {
-  head -n 16 ~/.ssh/cheat_sheet.txt
-}
-function bs {
-  cd `bundle show $1`
-}
 function title {
   echo -ne "\033]0;"$*"\007"
 }
-function kata {
-  cd ~/dev/_ember/_getting_started/_blog_video/kata/my_kata
-  rm -rf *
-  cp -R ../../starter_files/* .
+function color {
+  case $1 in
+  green)
+    echo -e "\033]6;1;bg;red;brightness;57\a"
+    echo -e "\033]6;1;bg;green;brightness;197\a"
+    echo -e "\033]6;1;bg;blue;brightness;77\a"
+    ;;
+  red)
+    echo -e "\033]6;1;bg;red;brightness;270\a"
+    echo -e "\033]6;1;bg;green;brightness;60\a"
+    echo -e "\033]6;1;bg;blue;brightness;83\a"
+    ;;
+  orange)
+    echo -e "\033]6;1;bg;red;brightness;227\a"
+    echo -e "\033]6;1;bg;green;brightness;143\a"
+    echo -e "\033]6;1;bg;blue;brightness;10\a"
+    ;;
+  darkgreen)
+    echo -e "\033]6;1;bg;red;brightness;46\a"
+    echo -e "\033]6;1;bg;green;brightness;78\a"
+    echo -e "\033]6;1;bg;blue;brightness;49\a"
+    ;;
+  blue)
+    echo -e "\033]6;1;bg;red;brightness;42\a"
+    echo -e "\033]6;1;bg;green;brightness;100\a"
+    echo -e "\033]6;1;bg;blue;brightness;158\a"
+    ;;
+  pink)
+    echo -e "\033]6;1;bg;red;brightness;209\a"
+    echo -e "\033]6;1;bg;green;brightness;43\a"
+    echo -e "\033]6;1;bg;blue;brightness;98\a"
+    ;;
+  yellow)
+    echo -e "\033]6;1;bg;red;brightness;211\a"
+    echo -e "\033]6;1;bg;green;brightness;163\a"
+    echo -e "\033]6;1;bg;blue;brightness;38\a"
+    ;;
+  sb)
+    echo -e "\033]6;1;bg;red;brightness;169\a"
+    echo -e "\033]6;1;bg;green;brightness;219\a"
+    echo -e "\033]6;1;bg;blue;brightness;227\a"
+    ;;
+  esac
 }
-function vox {
-  cd /Users/livando/Dropbox/DropVox
-  ls
-}
-
 function mark {
   open -a Marked.app $1
-}
-function spark {
-  open -a Marked.app ~/Dropbox/notes/02-13-14-spark\ file.md
-  vim ~/Dropbox/notes/02-13-14-spark\ file.md
-}
-function ppls {
-  open -a Marked.app ~/clients/sparkbox/ppls/ppls_notes.md
-  vim ~/clients/sparkbox/ppls/ppls_notes.md
-}
-function egs {
-  open -a Google\ Chrome.app http://emberjs.com/guides/getting-started/
-  open -a Google\ Chrome.app ~/dev/_ember/getting_started/index.html
-  open -a Marked.app ~/dev/_ember/getting_started/ember.md
-  cd ~/dev/_ember/getting_started
-  vim ~/dev/_ember/getting_started
-}
-function dcs {
-  open -a Marked.app ~/clients/sparkbox/ppls/dcs_notes.md
-  vim ~/clients/sparkbox/ppls/dcs_notes.md
-}
-function stf {
-  open -a Marked.app ~/dev/_red_iron_crow/www.steeltrap.com/brainstorming/feature.md
-  vim ~/dev/_red_iron_crow/www.steeltrap.com/brainstorming/feature.md
-}
-function nip {
-  mkdir $1
-  cd $1
-  mkdir assets to_client working_files
-  cd working_files
-  mkdir ios site
 }
 function redis {
   open http://localhost:8081
   redis-commander
-}
-function rn {
-  rails new $1 -b ~/bin/dotfiles/config/app_builder.rb
 }
 function hg {
   history | grep --color=auto $1
 }
 function gfind {
   awk "/#\[$1-start\]/,/#\[$1-end\]/ { print }" ~/bin/dotfiles/bash/aliases
-}
-function hcreate {
-  heroku create
-  git push heroku master
-  heroku run rake db:migrate
-  heroku apps:rename $1
-  heroku open
-}
-function hsetup {
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/Procfile .
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.env .
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.ruby-version .
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/.gitignore .
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/Gemfile .
-  cp ~/Dropbox/2016/products/theme_kick/themes/resources_rails/database.yml config/
-  bundle install
 }
 
 function hnp {
@@ -104,15 +76,6 @@ function hnp {
   #cp config/environments/production.rb config/environments/staging.rb
   #heroku config:add RACK_ENV=staging RAILS_ENV=staging --remote staging
 }
-function nios {
-  mkdir -p assets/images assets/images@2x assets/nibs
-  mkdir -p classes/constants classes/controllers classes/lib classes/models classes/managers classes/utils classes/views
-}
-function np {
-  cd ~/dev/_illuminati/projects
-  take $1
-  mkdir assets working_files to_client
-}
 function count {
   ls | wc -l
 }
@@ -123,24 +86,9 @@ function take {
 function tm {
   tmux new -s $1
 }
-function push {
-  git push
-  git push heroku
-}
-function prec {
-  RAILS_ENV=production 
-  bundle exec rake assets:precompile
-}
 function tell {
   cd $1
   ls -l
-}
-function rvm_install {
-  rvm install $1 --with-gcc=clang
-}
-function migrate {
-  rake db:migrate
-  rake db:test:prepare
 }
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'

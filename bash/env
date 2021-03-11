@@ -1,13 +1,4 @@
-export EDITOR='~/bin/mvim'
-export GOPATH=$HOME/work
-export GOPATH=$HOME/Dropbox/2016/books/go_in_practice/
-#export EDITOR='/usr/bin/vim'
-GRADLE_HOME=/Users/donl/opt/gradle-1.0-milestone-3
-HBRAKE_HOME=/users/donl/opt/hand_brake
-GRAILS_HOME=/Users/donlivanec/opt/grails-2.1.1/
-PATH=/usr/local/bin/vim:/usr/local/bin:$PATH:/Users/donl/opt/gradle-1.0-milestone-3/bin:$HBRAKE_HOME:~/bin:$GRAILS_HOME/bin
+export EDITOR='vim'
+export GPG_TTY=$(tty)
 PATH=$PATH:/usr/local/sbin
-#export SCOUT_ENV='development'
-export SCOUT_ENV='development'
-export TIMBER_ENV='development'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
